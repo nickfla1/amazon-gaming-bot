@@ -5,39 +5,6 @@ from gql.transport.aiohttp import AIOHTTPTransport
 from bot.constants import GRAPHQL_ENDPOINT
 
 
-def get_user_info(config, csrf_token):
-    cookies = _get_cookies(config)
-
-    headers = {
-        "Content-Type": "application/json",
-        "Client-Id": "CarboniteApp",
-        "csrf-token": csrf_token,
-    }
-
-    transport = AIOHTTPTransport(
-        url=GRAPHQL_ENDPOINT, cookies=cookies, headers=headers)
-    client = Client(transport=transport, fetch_schema_from_transport=True)
-
-    query = gql(
-        """
-        query UserContext_CurrentUser {
-            currentUser {
-                email
-                firstName
-                fullName
-                id
-                obfuscatedEmail
-                __typename
-            }
-        }
-
-        """
-    )
-
-    res = client.execute(query, parse_result=True)
-    return res["currentUser"]
-
-
 def get_games(config, csrf_token):
     cookies = _get_cookies(config)
 
