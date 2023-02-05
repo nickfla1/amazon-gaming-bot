@@ -1,0 +1,4 @@
+auth:
+  sessionId: 123
+  sessionToken: foobar
+  mainToken: foobar

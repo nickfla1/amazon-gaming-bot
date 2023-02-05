@@ -1,0 +1,5 @@
+requests
+gql
+beautifulsoup4
+aiohttp
+yaml
