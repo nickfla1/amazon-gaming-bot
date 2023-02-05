@@ -6,8 +6,8 @@ Usage of this software is to be intended to personal and educational uses only.
 
 ### API format
 
-Protocol: GraphQL
-Endpoint: https://gaming.amazon.com/graphql
+- **Protocol**: GraphQL
+- **Endpoint**: https://gaming.amazon.com/graphql
 
 All requests have a query parameter called `nonce`.
 
